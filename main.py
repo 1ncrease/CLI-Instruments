@@ -2,7 +2,6 @@ import click
 import web3
 import requests
 from client_createbucket import *
-from makemessagefile import *
 from oPtions import *
 from cfgFIT import *
 
