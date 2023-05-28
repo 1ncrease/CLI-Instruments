@@ -6,4 +6,4 @@
  *  Requests 
  *  cryptography - to sign the message and send it to the Tendermint RPC
  *  Web3.py 
- *  Protobuf - to create a message
+ *  subprocess - to create message
