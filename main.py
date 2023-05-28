@@ -12,7 +12,7 @@ paymentAddrStr = paymentAddress
 visibility = 2#хз
 TxOpts = хз 
 ChargedQuota = хз
-IsAsyncMod = хз
+IsAsyncMode = хз
 
 @click.group()
 def bucket():
