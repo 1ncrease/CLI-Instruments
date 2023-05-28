@@ -9,7 +9,7 @@ from cfgFIT import *
 primarySpAddrStr = storage_provider#ctx.String(primarySPFlag)#in go
 paymentAddrStr = paymentAddress
 
-visibility = 2#хз
+visibility = 2
 TxOpts = хз 
 ChargedQuota = хз
 IsAsyncMode = хз
@@ -25,6 +25,9 @@ def cmd_createbucket():
     opts = NewOpts(visibility,TxOpts,paymentAddrStr,ChargedQuota,IsAsyncMode)#sdktypes.CreateBucketOptions{} #in go ,make opts list with visivility ,payment ,address etc          
     if paymentAddrStr != "":
         opts.PaymentAddress = paymentAddrStr
+    if opts.Visibility == 0 :
+	    opts.Visibility = visibility
+        
     #if primarySpAddrStr == "" : 
 	    #spInfo = 1#client.ListStorageProviders(c, False)
 	    #primarySpAddrStr = 1#spInfo[0].GetOperatorAddress()         

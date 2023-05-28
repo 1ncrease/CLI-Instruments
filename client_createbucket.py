@@ -2,17 +2,19 @@ from messages import *
 import requests
 from signed import *
 from cfgFIT import *
-
+from main import *
+from oPtions import *
 endpoint = хз
 sender_address = хз
-creator = sender_address
+creator = sender_address 
 recipient_address = хз 
 def createbucket(bucketName, primaryAddr, opts):
-	chargedReadQuota = opts[0]
-	sig = opts[1]
-	timeoutHeight = opts[2]
-	visibility = opts[3]
-	msg = NewMsgCreateBucket(creator, bucketName, visibility, primaryAddr, paymentAddress, timeoutHeight, sig, chargedReadQuota)
+	chargedReadQuota = opts.ChargedQuota 
+	timeoutHeight = 1
+	visibility = opts.Visibility
+	sig_bytes = 2# типа b'\x01\x02\x03\x04'  
+	PrimarySpApproval = Approval(timeoutHeight, sig_bytes)
+	msg = NewMsgCreateBucket(creator, bucketName, visibility,paymentAddress, primaryAddr,PrimarySpApproval ,timeoutHeight, sig, chargedReadQuota)
 	signed = sign_message(msg, private_key1)
 	signature_hex = hex(signed)
 	transaction = {
