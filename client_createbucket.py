@@ -1,6 +1,5 @@
 from messages import * 
 import requests
-import ecdsa
 from signed import *
 from cfgFIT import *
 
