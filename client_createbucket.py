@@ -12,9 +12,9 @@ def createbucket(bucketName, primaryAddr, opts):
 	chargedReadQuota = opts.ChargedQuota 
 	timeoutHeight = 1
 	visibility = opts.Visibility
-	sig_bytes = 2# типа b'\x01\x02\x03\x04'  
-	PrimarySpApproval = Approval(timeoutHeight, sig_bytes)
-	msg = NewMsgCreateBucket(creator, bucketName, visibility,paymentAddress, primaryAddr,PrimarySpApproval ,timeoutHeight, sig, chargedReadQuota)
+	sig = 2# типа b'\x01\x02\x03\x04'  
+	PrimarySpApproval = Approval(timeoutHeight, sig)
+	msg = NewMsgCreateBucket(creator, bucketName, visibility,paymentAddress, primaryAddr,PrimarySpApproval ,timeoutHeight, sig , chargedReadQuota)
 	signed = sign_message(msg, private_key1)
 	signature_hex = hex(signed)
 	transaction = {
