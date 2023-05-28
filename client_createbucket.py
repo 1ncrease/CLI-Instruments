@@ -4,10 +4,10 @@ from signed import *
 from cfgFIT import *
 from main import *
 from oPtions import *
-endpoint = хз
-sender_address = хз
-creator = sender_address 
-recipient_address = хз 
+endpoint = tendermint_rpc_url 
+sender_address = paymentAddress
+creator =  paymentAddress
+#recipient_address =  
 def createbucket(bucketName, primaryAddr, opts):
 	chargedReadQuota = opts.ChargedQuota 
 	timeoutHeight = 1
@@ -23,7 +23,7 @@ def createbucket(bucketName, primaryAddr, opts):
     	"message": msg.SerializeToString(),
     	"gas_price": 100
 	}     
-	#signature = sign_transaction(transaction, private_key)   я хз 
+	#signature = sign_transaction(transaction, private_key)   
 	transaction["signature"] = signature_hex # возможно только signature
 	response = requests.post(f"{endpoint}/transactions", json = transaction) 
 	return response
