@@ -4,7 +4,15 @@ import requests
 from client_createbucket import *
 from makemessagefile import *
 from oPtions import *
+from cfgFIT import *
 
+primarySpAddrStr = storage_provider#ctx.String(primarySPFlag)#in go
+paymentAddrStr = paymentAddress
+
+visibility = 2#хз
+TxOpts = хз 
+ChargedQuota = хз
+IsAsyncMod = хз
 
 @click.group()
 def bucket():
@@ -13,10 +21,8 @@ def bucket():
 
 @click.command()
 def cmd_createbucket():
-    bucketName = "MyBucket"#getBucketNameByUrl(ctx)#in go
-    primarySpAddrStr = "https://gnfd-testnet-sp-1.bnbchain.org"#ctx.String(primarySPFlag)#in go
-    paymentAddrStr = "212121212"#хз\ Аманжол ты знаешь
-    opts = NewOpts(Visibility,TxOpts,PaymentAddrStr,ChargedQuota,IsAsyncMode)#sdktypes.CreateBucketOptions{} #in go ,make opts list with visivility ,payment ,address etc          
+    bucketName = "MyBucket"   #getBucketNameByUrl(ctx)#in go
+    opts = NewOpts(visibility,TxOpts,paymentAddrStr,ChargedQuota,IsAsyncMode)#sdktypes.CreateBucketOptions{} #in go ,make opts list with visivility ,payment ,address etc          
     if paymentAddrStr != "":
         opts.PaymentAddress = paymentAddrStr
     #if primarySpAddrStr == "" : 
