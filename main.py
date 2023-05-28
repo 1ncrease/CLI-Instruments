@@ -10,9 +10,9 @@ primarySpAddrStr = storage_provider#ctx.String(primarySPFlag)#in go
 paymentAddrStr = paymentAddress
 
 visibility = 2
-TxOpts = хз 
-ChargedQuota = хз
-IsAsyncMode = хз
+TxOpts = #we dont know where it is from  
+ChargedQuota =   #we dont know where it is from
+IsAsyncMode = 1   #we dont know where it is from
 
 @click.group()
 def bucket():
@@ -21,7 +21,7 @@ def bucket():
 
 @click.command()
 def cmd_createbucket():
-    bucketName = "MyBucket"   #getBucketNameByUrl(ctx)#in go
+    bucketName = "MyBucket"   #getBucketNameByUrl(ctx)#in go #we dont know where it is from
     opts = NewOpts(visibility,TxOpts,paymentAddrStr,ChargedQuota,IsAsyncMode)#sdktypes.CreateBucketOptions{} #in go ,make opts list with visivility ,payment ,address etc          
     if paymentAddrStr != "":
         opts.PaymentAddress = paymentAddrStr
