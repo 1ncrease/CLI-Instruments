@@ -1,14 +1,15 @@
 from cfgFIT import *
-from mesg_pb2 import NewBucketMsg
+from mesg_pb2 import CreateBucketMsg
 
 
 def NewMsgCreateBucket(creator, bucketName, visibility, primarySPAddress, paymentAddress, timeoutHeight, sig, chargedReadQuota):
-    msg = NewBucketMsg()
-    msg.Creator = str(creator)
-    msg.BucketName = bucketName
-    msg.Visibility = visibility
-    msg.PaymentAddress = str(paymentAddress)
-    msg.PrimarySpAddress = str(primarySPAddress)
-    msg.PrimarySpApproval=Approval(timeoutHeight, sig)
-    msg.ChargedReadQuota= chargedReadQuota
+    msg = CreateBucketMsg()
+    msg.creator = str(creator)
+    msg.bucket_name = bucketName
+    msg.visibility = visibility
+    msg.payment_address = str(paymentAddress)
+    msg.primary_sp_address = str(primarySPAddress)    # хз 
+    msg.timeout_height = timeoutHeight
+    msg.signature = sig
+    msg.charged_read_quota = chargedReadQuota
     

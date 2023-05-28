@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package mypackage;
+
+message CreateBucketMsg {
+  string creator = 1;
+  string bucket_name = 2;
+  string visibility = 3;
+  string payment_address = 4;
+  string primary_sp_address = 5;
+  int64 timeout_height = 6;
+  string signature = 7;
+  int64 charged_read_quota = 8;
+}

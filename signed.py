@@ -23,4 +23,8 @@ def sign_message(message, private_key):
 
     return signature
 
-
+private_key1 = generate_private_key(
+    	public_exponent=65537,
+    	key_size=2048,
+    	backend=default_backend()
+)	
