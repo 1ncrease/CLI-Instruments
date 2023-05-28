@@ -1,0 +1,7 @@
+tendermint_rpc_url = 'https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org'
+chain_id = 'greenfield_5600-1'
+storage_provider = 'https://gnfd-testnet-sp-1.bnbchain.org'
+rpc_end_point = 'https://data-seed-prebsc-1-s1.binance.org:8545'
+private_key = 'amanbekaralyas'
+paymentAddress = '0x18F23c81070D5D4caEe13D184b09fa699E2BdEE0'
+metamask_key = 'a44633d562d7c918559f03bdea7b0ed3c5f36fe0bca2c7f39a07cc45607319cb'

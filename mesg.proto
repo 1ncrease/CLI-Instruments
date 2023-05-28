@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package mypackage;
+
+message NewBucketMsg {
+ 	Creator=1;
+        BucketName=2;
+        Visibility=3;
+        PaymentAddress=4;
+        PrimarySpAddress=5;
+        PrimarySpApproval=6;
+        ChargedReadQuota=7;
+}
